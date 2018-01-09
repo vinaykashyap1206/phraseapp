@@ -1,0 +1,15 @@
+<center>
+  <div class="mt-20">
+    <%=link_to 'Get New Phrase', '#', class: 'btn btn-lg btn-success', id: 'get_phrase'%>
+    <br/><br/>
+    <%=link_to 'Clear Phrases', '#', class: 'btn btn-lg btn-danger', id: 'clear_phrase'%>
+  </div> 
+
+  <div class="phrases mt-20">
+    <% if @phrases.present? %>
+      <%@phrases.each do |phrase| %>
+        <%= render 'phrase', :@phrase => phrase %>
+      <%end%> 
+    <%end%>
+  </div> 
+</center>

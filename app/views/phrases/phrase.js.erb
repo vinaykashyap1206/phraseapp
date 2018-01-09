@@ -1,0 +1,9 @@
+<% if params[:action] == 'get_random_phrase' %>
+  <% if @phrase.present? %>
+    $('.phrases').prepend("<%= escape_javascript(render 'phrases/phrase', :@phrase => @phrase)%>");
+  <%else%>
+    alert('There is no phrase remaining');
+  <%end%>  
+<% else %>
+  $('.phrases').html("");
+<%end%>
